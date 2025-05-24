@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<head><title>MR THANGJAM</title></head>
+<!-- Play video and audio together -->
+<video id="myVideo" width="400" controls>
+  <source src="naton.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+<audio id="myAudio">
+  <source src="naton.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  const video = document.getElementById('myVideo');
+  const audio = document.getElementById('myAudio');
+  video.onplay = () => audio.play();
+  video.onpause = () => audio.pause();
+  video.onseeking = () => { audio.currentTime = video.currentTime; };
+  video.onvolumechange = () => { audio.volume = video.volume; };
+</script>
+
+</body> 
+</html>
+
